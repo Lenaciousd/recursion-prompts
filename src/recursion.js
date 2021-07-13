@@ -118,7 +118,7 @@ var powerOfTwo = function(n) {
     return false
   }
 
-  return  powerOfTwo(n/2)
+  return powerOfTwo(n/2)
 };
 
 // 9. Write a function that reverses a string.
@@ -132,6 +132,18 @@ var reverse = function(string) {
 
 // 10. Write a function that determines if a string is a palindrome.
 var palindrome = function(string) {
+  string = string.toLowerCase()
+  if (string === ''){
+    return true
+  }
+  if (string.length === 2) {
+    return string[0] === string[string.length-1]
+  }
+
+  if (string[0] === string.slice(-1)) {
+    return palindrome(string.slice(1, -1))
+  }
+  return false
 };
 
 // 11. Write a function that returns the remainder of x divided by y without using the

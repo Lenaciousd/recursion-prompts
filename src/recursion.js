@@ -17,7 +17,7 @@ var factorial = function(n) {
   if (total === 1) {
     return total
   }
-  total *= factorial(n-1)
+  total *= factorial(n - 1)
   return total
 };
 
@@ -118,7 +118,7 @@ var powerOfTwo = function(n) {
     return false
   }
 
-  return powerOfTwo(n/2)
+  return powerOfTwo(n / 2)
 };
 
 // 9. Write a function that reverses a string.
@@ -127,7 +127,7 @@ var reverse = function(string) {
     return string
   }
 
-  return string.slice(-1) + reverse(string.slice(0,-1))
+  return string.slice(-1) + reverse(string.slice(0, -1))
 };
 
 // 10. Write a function that determines if a string is a palindrome.
@@ -137,7 +137,7 @@ var palindrome = function(string) {
     return true
   }
   if (string.length === 2) {
-    return string[0] === string[string.length-1]
+    return string[0] === string[string.length - 1]
   }
 
   if (string[0] === string.slice(-1)) {
@@ -163,16 +163,14 @@ var modulo = function(x, y) {
   var absX = x < 0 ? -x : x
   var absY = y < 0 ? -y : y
 
-
   if (absX < absY) {
     return x
   }
-  if (x > 0 && y < 0 || x < 0 && y > 0 ) {
-    return  modulo(x+y, y)
+  if (x > 0 && y < 0 || x < 0 && y > 0) {
+    return  modulo(x + y, y)
   } else {
-    return  modulo(x-y, y)
+    return  modulo(x - y, y)
   }
-
 };
 
 // 12. Write a function that multiplies two numbers without using the * operator or
@@ -185,17 +183,16 @@ var multiply = function(x, y) {
   var absX = x < 0 ? -x : x
   var absY = y < 0 ? -y : y
 
-
   if (y === 0) {
     return 0
   }
   while (absY > 0) {
     if (x < 0 && y < 0) {
-      return absX + multiply(x, y+1)
+      return absX + multiply(x, y + 1)
     } else if (x > 0 && y < 0) {
-      return - x + multiply(x, y+1)
+      return - x + multiply(x, y + 1)
     } else  {
-      return x + multiply(x, y-1)
+      return x + multiply(x, y - 1)
     }
   }
 };
